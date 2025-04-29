@@ -1,0 +1,3 @@
+[submodule "static_analysis"]
+	path = static_analysis
+	url = ./static_analysis
