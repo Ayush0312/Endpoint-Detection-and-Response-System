@@ -1,0 +1,32 @@
+# Network monitoring
+pyshark>=0.6
+requests==2.31.0  # Fixed version for compatibility
+flask>=3.0.0
+scapy>=2.5.0
+netifaces==0.11.0; platform_system != "Windows"  # Use netifaces for non-Windows
+psutil>=5.9.0; platform_system == "Windows"  # Use psutil for Windows
+
+# Static analysis
+streamlit==1.39.0  # Fixed version for compatibility
+joblib==1.4.2  # Fixed version for compatibility
+pefile==2024.8.26  # Fixed version for compatibility
+numpy==2.1.2  # Fixed version for compatibility
+pandas==2.2.3  # Fixed version for compatibility
+scikit-learn==1.5.2  # Fixed version for compatibility
+plotly==5.18.0  # Fixed version for compatibility
+python-magic==0.4.27  # Fixed version for compatibility
+python-magic-bin==0.4.14  # Fixed version for compatibility
+
+# File monitoring
+watchdog>=2.1.0
+pywin32>=303; platform_system == "Windows"
+
+# General utilities
+pyyaml>=6.0
+colorama>=0.4.4
+tqdm>=4.62.0
+python-dotenv>=0.19.0
+
+# Optional: Streamlit for dashboard
+streamlit==1.39.0  # Fixed version for compatibility
+plotly==5.18.0  # Fixed version for compatibility 

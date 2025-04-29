@@ -1,0 +1,58 @@
+modules:
+  network_monitor:
+    enabled: true
+    config:
+      interface: "any"  # Use 'any' to capture on all interfaces
+      alert_threshold: 100  # Number of suspicious packets before alert
+      protocols:
+        - "HTTP"
+        - "DNS"
+        - "FTP"
+        - "SSH"
+        - "SMTP"
+      suspicious_patterns:
+        - ".xyz"
+        - ".tk"
+        - "suspicious"
+      
+  static_analysis:
+    enabled: true
+    config:
+      scan_interval: 300  # Scan interval in seconds
+      model_path: "static_analysis/model/model_enhanced.pkl"
+      test_files_dir: "static_analysis/test_files"
+      file_types:
+        - ".exe"
+        - ".dll"
+        - ".bat"
+        - ".ps1"
+        - ".vbs"
+      
+  file_monitor:
+    enabled: true
+    config:
+      watch_paths:
+        - "."  # Current directory
+        - "static_analysis/test_files"  # Test files directory
+      excluded_paths:
+        - "__pycache__"
+        - "venv"
+        - "*.log"
+      alert_on:
+        - "file_creation"
+        - "file_modification"
+        - "file_deletion"
+      max_file_size: 10485760  # 10MB
+
+logging:
+  level: "INFO"
+  file: "edr_system.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+dashboard:
+  enabled: true
+  refresh_interval: 5  # seconds
+  port: 8501
+  host: "localhost" 
