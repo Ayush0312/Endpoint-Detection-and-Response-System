@@ -33,6 +33,16 @@ env/
 *.swo
 .DS_Store
 
+# Visual Studio
+.vs/
+*.ipch
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # Project specific
 edr_system.log
 network_alerts.json
